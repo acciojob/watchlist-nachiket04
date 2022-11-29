@@ -38,12 +38,7 @@ public class MovieService {
     }
 
     public List<String> getMoviesOfADirector(String drName){
-        List<String> mvList = new ArrayList<>();
-        List<Movie> obList = movieRepository.getMoviesOfDirector(drName);
-        for(Movie movie: obList){
-            mvList.add(movie.getName());
-        }
-        return mvList;
+        return movieRepository.getMoviesOfDirector(drName);
     }
 
     public List<String> getMovies(){

@@ -54,11 +54,11 @@ public class MovieRepository {
         return directorHashMap.get(drName);
     }
 
-    public List<Movie> getMoviesOfDirector(String drName){
-        List<Movie> drmvList = new ArrayList<>();
+    public List<String> getMoviesOfDirector(String drName){
+        List<String> drmvList = new ArrayList<>();
         for(Pair p: pairList){
             if(p.director.equals(drName)){
-                drmvList.add(p.movie);
+                drmvList.add(p.movie.getName());
             }
         }
         return drmvList;
@@ -73,7 +73,9 @@ public class MovieRepository {
     }
 
     public void deleteAllDirectorMovies(String drName){
-        for(Pair p: pairList){
+        int size = pairList.size();
+        for(int i=0; i<size; i++){
+            Pair p = pairList.get(i);
             if(p.director.getName().equals(drName)){
                 movieHashMap.remove(p.movie.getName());
                 directorHashMap.remove(drName);
