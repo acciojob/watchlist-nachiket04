@@ -86,7 +86,7 @@ public class MovieRepository {
         for(Pair p: pairList){
             movieHashMap.remove(p.movie.getName());
             directorHashMap.remove(p.director.getName());
-            pairList.remove(p);
         }
+        pairList.clear();
     }
 }
