@@ -57,7 +57,7 @@ public class MovieRepository {
     public List<String> getMoviesOfDirector(String drName){
         List<String> drmvList = new ArrayList<>();
         for(Pair p: pairList){
-            if(p.director.equals(drName)){
+            if(p.director.getName().equals(drName)){
                 drmvList.add(p.movie.getName());
             }
         }
